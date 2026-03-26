@@ -1,0 +1,122 @@
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --primary: #1f77e0;
+  --text: #1d2330;
+  --muted: #667089;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #f0f7ff 0%, #dfe8f7 100%);
+  color: var(--text);
+  min-height: 100%;
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 12px;
+}
+
+.app-header {
+  text-align: center;
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 22px rgba(18, 35, 70, 0.12);
+}
+
+.app-header h1 { margin: 0; font-size: 1.8rem; }
+.app-header p { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+#chat-container {
+  background: var(--panel);
+  flex: 1;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(18, 35, 70, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+#chatbox {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 66vh;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+  font-size: 0.96rem;
+  box-shadow: 0 2px 8px rgba(31, 51, 96, 0.08);
+}
+
+.message.user {
+  align-self: flex-end;
+  background: #d8e6ff;
+  color: #072e84;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: #eef3ff;
+  color: #0d2a71;
+}
+
+.input-area {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 8px 22px rgba(18, 35, 70, 0.08);
+}
+
+#message {
+  border: 1px solid #cbd6ea;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+#message:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31, 119, 224, 0.2);
+}
+
+#sendBtn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+#sendBtn:hover {
+  opacity: 0.93;
+}
+
+@media (max-width: 620px) {
+  .app-shell { padding: 12px; }
+  #message { font-size: 0.96rem; }
+  #sendBtn { padding: 0 14px; }
+}
